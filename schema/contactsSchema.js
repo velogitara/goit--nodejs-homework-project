@@ -1,3 +1,5 @@
+// TODO move schema to model/contact
+
 const Joi = require('Joi');
 
 const contactsSchema = Joi.object({
