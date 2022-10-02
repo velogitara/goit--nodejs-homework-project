@@ -1,12 +1,10 @@
 const express = require('express');
 
 const { contacts: ctrl } = require('../../controllers');
-// validation
 
 const { validation, ctrlWrapper } = require('../../middleWares');
 const { contactsSchema } = require('../../schema');
 const validateMiddleware = validation(contactsSchema);
-//
 
 const router = express.Router();
 

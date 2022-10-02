@@ -30,7 +30,6 @@ const addContact = async body => {
   const result = await sameName(contacts).then(res => {
     return res;
   });
-  console.log('33-я строка', result);
 
   if (result !== -1) {
     const error = new Error();

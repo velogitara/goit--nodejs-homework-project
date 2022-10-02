@@ -159,3 +159,13 @@ POST /api/contacts/ 25-09-2022_11:56:57
 POST /api/contacts/ 25-09-2022_11:56:59
 POST /api/contacts/ 25-09-2022_11:57:27
 POST /api/contacts/ 25-09-2022_11:57:34
+POST /api/contacts/ 02-10-2022_10:46:14
+POST /api/contacts/ 02-10-2022_11:16:26
+PUT /api/contacts/ 02-10-2022_11:16:42
+PUT /api/contacts/3736f72a-b2b7-48c3-ada6-6b5db35f6a6e 02-10-2022_11:17:11
+PUT /api/contacts/3736f72a-b2b7-48c3-ada6-6b5db35f6a6e 02-10-2022_11:17:15
+PUT /api/contacts/3736f72a-b2b7-48c3-ada6-6b5db35f6a6e 02-10-2022_11:17:27
+PUT /api/contacts/3736f72a-b2b7-48c3-ada6-6b5db35f6a 02-10-2022_11:17:32
+GET /api/contacts 02-10-2022_11:17:44
+PUT /api/contacts/3736f72a-b2b7-48c3-ada6-6b5db35f6a 02-10-2022_11:20:30
+PUT /api/contacts/3736f72a-b2b7-48c3-ada6-6b5db35f6a 02-10-2022_11:21:18
