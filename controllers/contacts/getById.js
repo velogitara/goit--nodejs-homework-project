@@ -8,15 +8,6 @@ const getById = async (req, res) => {
   console.log(result);
   if (!result) {
     throw new NotFound(`contact with id ${contactId} not found`);
-
-    // Подскажите, как в new NotFound передать объект как в примере ниже
-    // ======================
-
-    // res.status(404).json({
-    //   status: 'error',
-    //   code: 404,
-    //   message: `contact with id ${contactId} not found`,
-    // });
   }
   res.json({
     status: 'success',

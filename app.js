@@ -7,6 +7,7 @@ const fs = require('fs/promises');
 const moment = require('moment');
 
 const contactsRouter = require('./routes/api/contacts');
+const authRouter = require('./routes/api/auth');
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(async (req, res, next) => {
   next();
 });
 
+app.use('/api/auth', authRouter);
 app.use('/api/contacts', contactsRouter);
 
 app.use((req, res) => {
