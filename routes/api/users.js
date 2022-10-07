@@ -1,11 +1,20 @@
 const express = require('express');
 
-const { auth, ctrlWrapper } = require('../../middleWares');
+const { auth, ctrlWrapper, validation } = require('../../middleWares');
+
+const { subscriptionJoiSchema } = require('../../models');
 
 const router = express.Router();
 
 const { users: ctrl } = require('../../controllers');
 
-router.get('/current', auth, ctrlWrapper(ctrl.getCurrent));
+router.get('/current', ctrlWrapper(auth), ctrlWrapper(ctrl.getCurrent));
+
+router.patch(
+  '/',
+  ctrlWrapper(auth),
+  validation(subscriptionJoiSchema),
+  ctrlWrapper(ctrl.updateSubscription)
+);
 
 module.exports = router;

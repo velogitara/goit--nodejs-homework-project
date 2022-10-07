@@ -44,10 +44,15 @@ const loginSchema = Joi.object({
   password: Joi.string().required(),
 });
 
+const subscriptionJoiSchema = Joi.object({
+  subscription: Joi.string().required(),
+});
+
 const User = model('user', userSchema);
 
 module.exports = {
   registerSchema,
   loginSchema,
+  subscriptionJoiSchema,
   User,
 };
