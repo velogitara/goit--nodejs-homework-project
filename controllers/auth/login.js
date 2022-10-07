@@ -3,15 +3,16 @@ const jwt = require('jsonwebtoken');
 
 const { User } = require('../../models');
 
+const { Unauthorized, Conflict } = require('http-errors');
 const createError = require('http-errors');
 
 const { SECRET_KEY } = process.env;
 
-const login = async (req, res) => {
+const logIn = async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({ email });
   if (!user) {
-    throw new createError[401 || 'Unauthorized'](['Email not found']);
+    throw new Unauthorized('Email or password wrong');
   }
 
   const passwordCompare = await bcrypt.compare(password, user.password);
@@ -19,14 +20,22 @@ const login = async (req, res) => {
   if (!passwordCompare) {
     throw new createError[401 || 'Unauthorized'](['Email or password wrong']);
   }
+  if (user.token) {
+    throw new Conflict('User already logged In!');
+  }
 
   const payload = {
     id: user._id,
   };
   const token = jwt.sign(payload, SECRET_KEY, { expiresIn: '1h' });
+  await User.findByIdAndUpdate(user._id, { token });
   res.json({
-    token,
+    status: 'success',
+    code: 200,
+    data: {
+      token: token,
+    },
   });
 };
 
-module.exports = login;
+module.exports = logIn;

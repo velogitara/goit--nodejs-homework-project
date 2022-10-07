@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { validation, ctrlWrapper } = require('../../middleWares');
+const { auth, validation, ctrlWrapper } = require('../../middleWares');
 
 const router = express.Router();
 
@@ -10,6 +10,8 @@ const { registerSchema, loginSchema } = require('../../models');
 
 router.post('/register', validation(registerSchema), ctrlWrapper(ctrl.register));
 
-router.post('/login', validation(loginSchema), ctrlWrapper(ctrl.login));
+router.post('/login', validation(loginSchema), ctrlWrapper(ctrl.logIn));
+
+router.get('/logout', ctrlWrapper(auth), ctrlWrapper(ctrl.logOut));
 
 module.exports = router;
