@@ -1,22 +1,15 @@
 const { Contact } = require('../../models');
 const { NotFound } = require('http-errors');
+// const createError = require('http-errors');
 
-const getById = async (req, res) => {
+const getById = async (req, res, next) => {
   const { contactId } = req.params;
 
   const result = await Contact.findById(contactId);
   console.log(result);
   if (!result) {
     throw new NotFound(`contact with id ${contactId} not found`);
-
-    // Подскажите, как в new NotFound передать объект как в примере ниже
-    // ======================
-
-    // res.status(404).json({
-    //   status: 'error',
-    //   code: 404,
-    //   message: `contact with id ${contactId} not found`,
-    // });
+    // throw new createError[400 || 'BadRequest'](['BadRequest']);
   }
   res.json({
     status: 'success',

@@ -2,6 +2,8 @@ const { Schema, model } = require('mongoose');
 
 const Joi = require('Joi');
 
+const { handleSchemaValidationErrors } = require('../helpers');
+
 // const emailRegex = /.+\@.+\..+/;
 
 const contactSchema = Schema(
@@ -12,7 +14,9 @@ const contactSchema = Schema(
     },
     email: {
       type: String,
+      unique: true,
       required: [true, 'Email address is required'],
+
       // validate: [emailRegex, 'Please fill a valid email address'],
     },
     phone: {
@@ -23,9 +27,16 @@ const contactSchema = Schema(
       type: Boolean,
       default: false,
     },
+    owner: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: 'user',
+    },
   },
   { versionKey: false, timestamps: true }
 );
+
+contactSchema.post('save', handleSchemaValidationErrors);
 
 const joiSchema = Joi.object({
   name: Joi.string().required(),
