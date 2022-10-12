@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { auth, validation, ctrlWrapper } = require('../../middleWares');
+const { auth, validation, ctrlWrapper, isValidToken } = require('../../middleWares');
 
 const router = express.Router();
 
@@ -10,7 +10,7 @@ const { registerSchema, loginSchema } = require('../../models');
 
 router.post('/register', validation(registerSchema), ctrlWrapper(ctrl.register));
 
-router.post('/login', validation(loginSchema), ctrlWrapper(ctrl.logIn));
+router.post('/login', validation(loginSchema), isValidToken, ctrlWrapper(ctrl.logIn));
 
 router.get('/logout', ctrlWrapper(auth), ctrlWrapper(ctrl.logOut));
 
