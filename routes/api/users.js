@@ -17,4 +17,6 @@ router.patch(
   ctrlWrapper(ctrl.updateSubscription)
 );
 
+router.patch('/avatars', ctrlWrapper(auth));
+
 module.exports = router;
