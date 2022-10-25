@@ -1,6 +1,7 @@
 const express = require('express');
 
 const { contacts: ctrl } = require('../../controllers');
+
 // validation
 
 const { auth, validation, ctrlWrapper, isValidId } = require('../../middleWares');
