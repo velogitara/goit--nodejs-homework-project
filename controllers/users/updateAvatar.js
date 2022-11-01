@@ -14,8 +14,7 @@ const updateAvatar = async (req, res) => {
 
   try {
     const resultUpload = path.join(avatarsDir, imageName);
-    // console.log(resultUpload);
-    // console.log(tempUpload);
+
     const img = await jimp.read(tempUpload);
     await img
       .autocrop()
