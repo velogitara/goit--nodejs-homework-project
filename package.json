@@ -3,9 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "main": "server.js",
-  "engines": {
-    "node": "18.12.1"
-  },
   "scripts": {
     "start": "cross-env NODE_ENV=production node ./server.js",
     "start:dev": "cross-env NODE_ENV=development nodemon ./server.js",
@@ -31,8 +28,7 @@
     "multer": "^1.4.5-lts.1",
     "nanoid": "2.1.11",
     "notiflix": "^3.2.5",
-    "uuid": "^9.0.0",
-    "nodemon": "2.0.15"
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "eslint": "7.19.0",
@@ -40,6 +36,7 @@
     "eslint-config-standard": "16.0.3",
     "eslint-plugin-import": "2.25.3",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "5.2.0"
+    "eslint-plugin-promise": "5.2.0",
+    "nodemon": "2.0.15"
   }
 }
