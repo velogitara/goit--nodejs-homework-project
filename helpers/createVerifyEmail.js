@@ -4,7 +4,7 @@ const createVerifyEmail = (email, verificationToken) => {
   return {
     to: email,
     subject: 'email verification',
-    html: `<a target="_blank" href="${BASE_URL}api/users/verify/${verificationToken}"> press for confirmation</a>`,
+    html: `<a target="_blank" href="${BASE_URL}/api/users/verify/${verificationToken}"> press for confirmation</a>`,
   };
 };
 
