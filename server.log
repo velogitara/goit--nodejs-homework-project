@@ -499,3 +499,4 @@ POST /api/users/verify 04-11-2022_10:59:46
 GET /api/users/verify/UKb_1vMWanTQTgt79U1WU 04-11-2022_10:59:56
 POST /api/users/verify 04-11-2022_11:00:17
 POST /api/users/verify 04-11-2022_11:01:37
+POST /api/auth/register 08-11-2022_09:33:54
