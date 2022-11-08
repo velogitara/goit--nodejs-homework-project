@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const joi = require('joi');
+const Joi = require('joi');
 
 const { handleSchemaValidationErrors } = require('../helpers');
 
@@ -46,23 +46,23 @@ const userSchema = new Schema(
 
 userSchema.post('save', handleSchemaValidationErrors);
 
-const registerSchema = joi.object({
-  name: joi.string().required(),
-  email: joi.string().email().required(),
-  password: joi.string().required(),
+const registerSchema = Joi.object({
+  name: Joi.string().required(),
+  email: Joi.string().email().required(),
+  password: Joi.string().required(),
 });
 
-const loginSchema = joi.object({
-  email: joi.string().email().required(),
-  password: joi.string().required(),
+const loginSchema = Joi.object({
+  email: Joi.string().email().required(),
+  password: Joi.string().required(),
 });
 
-const verifyEmailSchema = joi.object({
-  email: joi.string().required(),
+const verifyEmailSchema = Joi.object({
+  email: Joi.string().required(),
 });
 
-const subscriptionJoiSchema = joi.object({
-  subscription: joi.string().required(),
+const subscriptionJoiSchema = Joi.object({
+  subscription: Joi.string().required(),
 });
 
 const User = model('user', userSchema);
