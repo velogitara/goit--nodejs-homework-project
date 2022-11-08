@@ -2,6 +2,10 @@
   "name": "goit--nodejs-homework-project",
   "version": "0.0.0",
   "private": true,
+  "main": "server.js",
+  "engines": {
+    "node": "18.12.1"
+  },
   "scripts": {
     "start": "cross-env NODE_ENV=production node ./server.js",
     "start:dev": "cross-env NODE_ENV=development nodemon ./server.js",
