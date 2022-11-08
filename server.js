@@ -8,10 +8,8 @@ const app = require('./app');
 mongoose
   .connect(DB_HOST)
   .then(() => {
-    app.listen(process.env.PORT || 3002);
-    console.log(
-      `Server running. Database connection successful Use our API on port: ${process.env.PORT} `
-    );
+    app.listen(PORT);
+    console.log(`Server running. Database connection successful Use our API on port: ${PORT} `);
   })
   .catch(error => {
     console.log(error.message);
