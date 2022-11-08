@@ -501,3 +501,7 @@ POST /api/users/verify 04-11-2022_11:00:17
 POST /api/users/verify 04-11-2022_11:01:37
 POST /api/auth/register 08-11-2022_09:33:54
 GET /api/users/verify/AzBIkQ_8gajCz9G5gkGzU 08-11-2022_09:55:20
+POST /api/auth/login 08-11-2022_10:04:56
+GET /api/auth/logout 08-11-2022_10:05:21
+POST /api/auth/register 08-11-2022_10:06:13
+GET /api/users/verify/yIfKj3gYjftzxL7wmWQlh 08-11-2022_10:29:51
